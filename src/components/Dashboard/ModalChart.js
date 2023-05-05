@@ -5,9 +5,9 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Chart from "../Dashboard/chart";
 
-export const ToggleModal = (props) => {
-
+export const ModalChart = (props) => {
   console.log("PROPS in MODAL", props);
   return (
     <>
@@ -21,21 +21,16 @@ export const ToggleModal = (props) => {
       >
         <Modal.Header>
           <Modal.Title id="contained-modal-title-vcenter">
-            Delete Tile
+            User Monthly detail Chart
           </Modal.Title>
           <CloseButton onClick={props.close}>
             {/* <FontAwesomeIcon icon={faEllipsisV} style={{ size: "lg" }} /> */}
           </CloseButton>
         </Modal.Header>
         <Modal.Body>
-          <div className="row justify-content-between">
-            <div className="col-5">
-              <h4>Are you sure to Delete?</h4>
-            </div>
-            <div className="col-3 ms-5 ps-5">
-              <Button className="" variant="contained" color="error"  fullWidth={true}>
-                Delete
-              </Button>
+          <div className="row">
+            <div className="col">
+              <Chart></Chart>
             </div>
           </div>
         </Modal.Body>
