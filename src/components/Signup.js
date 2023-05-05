@@ -38,7 +38,7 @@ export const Signup = () => {
     >
       {(formik) => (
 
-<div className="container mt-5 pt-5">
+<div className="container mt-5">
 <div className="row shadow-lg p-3">
         <div className="col-md-5">
         <div className="mt-5 pt-5">

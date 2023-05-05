@@ -38,10 +38,10 @@ export const Login = () => {
     >
       {(formik) => (
 
-<div className="container mt-5 pt-5">
-<div className="row shadow-lg p-3 mt-1 pb-5">
+<div className="container mt-5 mb-4">
+<div className="row shadow-lg p-3 mt-1 pb-5 mb-5">
         <div className="col-md-5">
-        <div className="mt-5 pt-5">
+        <div className="mt-5 pt-5 mb-5">
           <h1 className="my-4 font-weight-bold .display-4">Sign In</h1>
           <Form>
             {/* <TextField label="last Name" name="lastName" type="text" /> */}

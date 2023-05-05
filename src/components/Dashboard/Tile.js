@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Draggable from "react-draggable";
 import { DraggableCore } from "react-draggable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,18 +8,15 @@ import { Modal } from "react-bootstrap";
 import { ToggleModal } from "./Modal";
 import { ModalChart } from "./ModalChart";
 import { setLoginModalShow } from "./PassProp";
-import Chart from "../Dashboard/chart"
+import Chart from "../Dashboard/chart";
+
+import axios from "axios";
 
 export const Tile = () => {
   const DraggableCore = Draggable.DraggableCore;
 
   const [showLogin, setShowLogin] = useState(false);
   const [showChart, setShowChart] = useState(false);
-
-  const eventHandler1 = (e1, data1) => {
-    console.log("Event Type", e1.type);
-    console.log({ e1, data1 });
-  };
 
   return (
     <Draggable>
@@ -68,7 +65,9 @@ export const Tile = () => {
                     />
                   </div>
                 </div>
-                <h6 class="card-subtitle mb-2 text-muted">Users Monthly Details</h6>
+                <h6 class="card-subtitle mb-2 text-muted">
+                  Users Monthly Details
+                </h6>
                 <Chart></Chart>
                 <p class="card-text">
                   Some quick example text to build on the card title and make up
