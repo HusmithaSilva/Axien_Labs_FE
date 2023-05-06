@@ -1,6 +1,7 @@
 import React from "react";
 
 export const Navbar = () => {
+  //navigation bar start here
   return (
     <>
       <nav class="navbar navbar-expand-lg bg-primary">
@@ -35,16 +36,18 @@ export const Navbar = () => {
           </ul>
           <form class="col form-inline my-2 my-0 justify-content-between ">
             <div className="row me-2 ">
-            <input
-              class="form-control mr-sm-2 col"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="col-1 btn btn-success ms-2 ps-2 my-2 my-sm-0" type="submit">
-              Search
-            </button>
-
+              <input
+                class="form-control mr-sm-2 col"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button
+                class="col-1 btn btn-success ms-2 ps-2 my-2 my-sm-0"
+                type="submit"
+              >
+                Search
+              </button>
             </div>
           </form>
         </div>

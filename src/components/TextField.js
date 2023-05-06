@@ -1,6 +1,8 @@
 import React from 'react';
 import { ErrorMessage, useField } from 'formik';
 
+//individual text field start here
+//import textfield to many components
 export const TextField = ({ label, value, setValue, ...props }) => {
   const [field, meta] = useField(props);
   return (

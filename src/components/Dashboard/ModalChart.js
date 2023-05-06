@@ -10,30 +10,28 @@ import axios from "axios";
 
 //parent of display user in chart
 export const ModalChart = (props) => {
+  const [users, getUsers] = useState("");
+  //where data of users fetch from
+  const url = "http://localhost:8081/api/user/all";
 
+  //getting all users axios post request
+  const getAllUsers = () => {
+    axios
+      .get(`${url}`)
+      .then((Response) => {
+        const AllUsers = Response.data.users.AllUsers;
+        getUsers(AllUsers);
+      })
+      .catch((error) => {
+        console.error(`Error: ${error}`);
+      });
+  };
 
-    const [users, getUsers] = useState("");
-    //where data of users fetch from
-    const url = "http://localhost:8081/api/user/all";
-  
-    const getAllUsers = () => {
-      axios
-        .get(`${url}`)
-        .then((Response) => {
-          const AllUsers = Response.data.users.AllUsers;
-          getUsers(AllUsers);
-        })
-        .catch((error) => {
-          console.error(`Error: ${error}`);
-        });
-    };
-  
-    useEffect(() => {
-      getAllUsers();
-    }, []);
+  useEffect(() => {
+    getAllUsers();
+  }, []);
 
-
-
+  //modal starts here
   console.log("PROPS in MODAL", props);
   return (
     <>
@@ -50,16 +48,13 @@ export const ModalChart = (props) => {
             User Monthly detail Chart
           </Modal.Title>
           <CloseButton onClick={props.close}>
-            {/* <FontAwesomeIcon icon={faEllipsisV} style={{ size: "lg" }} /> */}
           </CloseButton>
         </Modal.Header>
         <Modal.Body>
           <div className="row">
             <div className="col">
-                {/* =================== */}
-                {/* import chart  */}
+              {/* import chart  */}
               <Chart users={users}></Chart>
-                {/* ================== */}
             </div>
           </div>
         </Modal.Body>

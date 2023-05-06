@@ -9,8 +9,10 @@ import { Signup } from "./components/Signup";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {Navbar} from "./components/NavBar";
 
+//app main access point starts here
 function App() {
   return (
+    //handle routes
     <Router>
       <Navbar />
       <Routes>
@@ -19,16 +21,6 @@ function App() {
         <Route path="/signup" element={<Signup/>} />
       </Routes>
     </Router>
-
-    // <div className="">
-    //   <div className="">
-    //     {/* <Login /> */}
-    //     <Dashboard />
-    //   </div>
-    //   <div className="">
-    //     {/* <img className="img-fluid w-100" src={rocketImg} alt=""/> */}
-    //   </div>
-    // </div>
   );
 }
 

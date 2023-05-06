@@ -5,8 +5,11 @@ import * as Yup from "yup";
 import rocketImg from "../assets/rocket.png";
 import axios from "axios";
 import { ErrorMessage, useField } from "formik";
+import { useNavigate } from "react-router-dom";
+
 
 export const Signup = () => {
+  //signup validations using yup
   const validate = Yup.object({
     firstName: Yup.string()
       .min(3, "Must be 15 characters or less")
@@ -27,6 +30,9 @@ export const Signup = () => {
   const [email, setEmail] = useState();
   const [name, setName] = useState();
 
+  // const [field, meta] = useField("email");
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     // Prevent the default submit and page reload
     e.preventDefault();
@@ -35,11 +41,14 @@ export const Signup = () => {
     axios
       .post("http://localhost:8081/api/user/add", { email, name })
       .then((response) => {
-        console.log(response);
+        // alert(response.data.message)
+        console.log(response.data);
         // Handle response
       });
+      navigate('/login');
   };
 
+  //handle formik form to sign up users
   return (
     <Formik
       initialValues={{
@@ -55,17 +64,13 @@ export const Signup = () => {
       }}
     >
       {(props) => (
+        
         <div className="container mt-5">
           <div className="row shadow-lg p-3">
             <div className="col-md-5">
               <div className="mt-5 pt-5">
                 <h1 className="my-4 font-weight-bold .display-4">Sign Up</h1>
                 <Form action="" onSubmit={handleSubmit} method="post">
-                  {/* <TextField label="First Name" name="firstName" type="text" /> */}
-                  {/* <TextField label="last Name" name="lastName" type="text" /> */}
-                  {/* <TextField label="Email" name="email" type="email"/> */}
-                  {/* <TextField label="password" name="password" type="password" /> */}
-                  {/* <TextField label="Confirm Password" name="confirmPassword" type="password" /> */}
                   <div className="mb-2">
                     <label>Email</label>
                     <input
@@ -77,8 +82,8 @@ export const Signup = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />
-                    {props.errors.name && <div id="feedback">{props.errors.name}</div>}
-                    <ErrorMessage component="div" name="email" className="error"/>
+                    {/* {meta.touched && meta.error && <div>{meta.error}</div>}
+                    <ErrorMessage name="email" component="div" /> */}
                   </div>
                   <div className="mb-2">
                     <label>Name</label>
@@ -90,6 +95,7 @@ export const Signup = () => {
                       id="name"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
+                      // {...field}
                     />
                     <ErrorMessage
                       component="div"
