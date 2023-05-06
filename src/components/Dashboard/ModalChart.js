@@ -10,26 +10,26 @@ import axios from "axios";
 
 //parent of display user in chart
 export const ModalChart = (props) => {
-  const [users, getUsers] = useState("");
-  //where data of users fetch from
-  const url = "http://localhost:8081/api/user/all";
+  // const [users, getUsers] = useState("");
+  // //where data of users fetch from
+  // const url = "http://localhost:8081/api/user/all";
 
-  //getting all users axios post request
-  const getAllUsers = () => {
-    axios
-      .get(`${url}`)
-      .then((Response) => {
-        const AllUsers = Response.data.users.AllUsers;
-        getUsers(AllUsers);
-      })
-      .catch((error) => {
-        console.error(`Error: ${error}`);
-      });
-  };
+  // //getting all users axios post request
+  // const getAllUsers = () => {
+  //   axios
+  //     .get(`${url}`)
+  //     .then((Response) => {
+  //       const AllUsers = Response.data.users.AllUsers;
+  //       getUsers(AllUsers);
+  //     })
+  //     .catch((error) => {
+  //       console.error(`Error: ${error}`);
+  //     });
+  // };
 
-  useEffect(() => {
-    getAllUsers();
-  }, []);
+  // useEffect(() => {
+  //   getAllUsers();
+  // }, []);
 
   //modal starts here
   console.log("PROPS in MODAL", props);
@@ -54,7 +54,7 @@ export const ModalChart = (props) => {
           <div className="row">
             <div className="col">
               {/* import chart  */}
-              <Chart users={users}></Chart>
+              <Chart ></Chart>
             </div>
           </div>
         </Modal.Body>

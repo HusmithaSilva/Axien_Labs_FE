@@ -29,6 +29,8 @@ export const Signup = () => {
 
   const [email, setEmail] = useState();
   const [name, setName] = useState();
+  const [price, setPrice] = useState();
+  const [stock, setStock] = useState();
 
   // const [field, meta] = useField("email");
   const navigate = useNavigate();
@@ -39,7 +41,7 @@ export const Signup = () => {
 
     // Handle validations
     axios
-      .post("http://localhost:8081/api/user/add", { email, name })
+      .post("http://localhost:8081/api/user/add", { email, name, price, stock })
       .then((response) => {
         // alert(response.data.message)
         console.log(response.data);
@@ -68,7 +70,7 @@ export const Signup = () => {
         <div className="container mt-5">
           <div className="row shadow-lg p-3">
             <div className="col-md-5">
-              <div className="mt-5 pt-5">
+              <div className="">
                 <h1 className="my-4 font-weight-bold .display-4">Sign Up</h1>
                 <Form action="" onSubmit={handleSubmit} method="post">
                   <div className="mb-2">
@@ -95,6 +97,42 @@ export const Signup = () => {
                       id="name"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
+                      // {...field}
+                    />
+                    <ErrorMessage
+                      component="div"
+                      name="name"
+                      className="error"
+                    />
+                  </div>
+                  <div className="mb-2">
+                    <label>Price</label>
+                    <input
+                      className="form-control shadow"
+                      label="price"
+                      type="price"
+                      name="price"
+                      id="price"
+                      value={price}
+                      onChange={(e) => setPrice(e.target.value)}
+                      // {...field}
+                    />
+                    <ErrorMessage
+                      component="div"
+                      name="name"
+                      className="error"
+                    />
+                  </div>
+                  <div className="mb-2">
+                    <label>Stock</label>
+                    <input
+                      className="form-control shadow"
+                      label="stock"
+                      type="stock"
+                      name="stock"
+                      id="stock"
+                      value={stock}
+                      onChange={(e) => setStock(e.target.value)}
                       // {...field}
                     />
                     <ErrorMessage
