@@ -26,7 +26,7 @@ export const Login = () => {
       .required("Confirm password is required"),
   });
 
-  const [username, setUsername] = useState();
+  const [email, setUsername] = useState();
   const [passcode, setPasscode] = useState();
 
   const handlesubmitLogin = (e) => {
@@ -35,7 +35,7 @@ export const Login = () => {
 
     // Handle validations
     axios
-      .post("http://localhost:8081/api/user/login", { username, passcode })
+      .post("http://localhost:8081/api/user/login", { email, passcode })
       .then((response) => {
         // alert(response.data.message)
         console.log(response.data);
@@ -75,14 +75,14 @@ export const Login = () => {
                       type="email"
                       name="email"
                       id="email"
-                      value={username}
+                      value={email}
                       onChange={(e) => setUsername(e.target.value)}
                     />
                     {/* {meta.touched && meta.error && <div>{meta.error}</div>}
                     <ErrorMessage name="email" component="div" /> */}
                   </div>
                   <div className="mb-2">
-                    <label>Name</label>
+                    <label>Passcode</label>
                     <input
                       className="form-control shadow"
                       label="name"

@@ -10,7 +10,7 @@ export const Dashboard = () => {
     <div>
       {/* Tile child components calls here */}
       <Tile />
-      <Tile />
+      {/* <Tile /> */}
     </div>
   );
 };
