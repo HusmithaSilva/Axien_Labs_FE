@@ -13,9 +13,9 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/dashboard" exact element={<Dashboard/>} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/signup" element={<Signup/>} />
+        <Route path="/https://main--candid-cocada-ab870b.netlify.app/dashboard" exact element={<Dashboard/>} />
+        <Route path="/https://main--candid-cocada-ab870b.netlify.app/login" element={<Login/>} />
+        <Route path="/https://main--candid-cocada-ab870b.netlify.app/signup" element={<Signup/>} />
       </Routes>
     </Router>
   );

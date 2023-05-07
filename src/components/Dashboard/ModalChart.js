@@ -26,7 +26,7 @@ ChartJS.register(
 
 //parent of display user in chart
 export const ModalChart = (props) => {
-  const Endpoint = "http://localhost:8081/api/user/all";
+  const Endpoint = "https://axien-lab-node.onrender.com/api/user/all";
   const [user, setUser] = useState([]);
   const getUserList = async () => {
     try {
