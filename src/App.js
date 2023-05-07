@@ -13,9 +13,9 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/dashboard" exact element={<Dashboard/>} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/signup" element={<Signup/>} />
+        <Route path="dashboard" exact element={<Dashboard/>} />
+        <Route path="login" element={<Login/>} />
+        <Route path="signup" element={<Signup/>} />
       </Routes>
     </Router>
   );
