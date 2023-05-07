@@ -4,7 +4,6 @@ import * as Yup from "yup";
 import rocketImg from "../assets/rocket.png";
 import axios from "axios";
 import { ErrorMessage } from "formik";
-import { useNavigate } from "react-router-dom";
 
 
 export const Signup = () => {
