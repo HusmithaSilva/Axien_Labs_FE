@@ -1,10 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { CloseButton, Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "@material-ui/core/Button";
-import Grid from "@material-ui/core/Grid";
-import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const ToggleModal = (props) => {
 

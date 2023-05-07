@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { CloseButton, Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "@material-ui/core/Button";
-import Chart from "../Dashboard/chart";
 import axios from "axios";
 import { Bar } from "react-chartjs-2";
 

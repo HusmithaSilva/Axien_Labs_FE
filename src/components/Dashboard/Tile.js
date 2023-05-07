@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Draggable from "react-draggable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { Modal } from "react-bootstrap";
 import { ToggleModal } from "./Modal";
 import { ModalChart } from "./ModalChart";
 import Chart from "../Dashboard/chart";
 
-import axios from "axios";
 
 export const Tile = () => {
-  const DraggableCore = Draggable.DraggableCore;
+  // const DraggableCore = Draggable.DraggableCore;
 
   const [showLogin, setShowLogin] = useState(false);
   const [showChart, setShowChart] = useState(false);

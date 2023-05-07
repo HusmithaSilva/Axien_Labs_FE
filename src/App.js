@@ -1,7 +1,4 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Draggable from "react-draggable";
-import { DraggableCore } from "react-draggable";
 import { Dashboard } from "./components/Dashboard/Dashboard";
 import { Login } from "./components/Login/Login";
 import { Signup } from "./components/Signup";

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
-import { TextField } from "./TextField";
 import * as Yup from "yup";
 import rocketImg from "../assets/rocket.png";
 import axios from "axios";
-import { ErrorMessage, useField } from "formik";
+import { ErrorMessage } from "formik";
 import { useNavigate } from "react-router-dom";
 
 
@@ -33,7 +32,7 @@ export const Signup = () => {
   const [stock, setStock] = useState();
 
   // const [field, meta] = useField("email");
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     // Prevent the default submit and page reload
