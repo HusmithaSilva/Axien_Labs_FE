@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Draggable from "react-draggable";
-import { DraggableCore } from "react-draggable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Modal } from "react-bootstrap";
 import { ToggleModal } from "./Modal";
 import { ModalChart } from "./ModalChart";
-import { setLoginModalShow } from "./PassProp";
 import Chart from "../Dashboard/chart";
 
 import axios from "axios";
@@ -19,6 +17,7 @@ export const Tile = () => {
   const [showChart, setShowChart] = useState(false);
 
   return (
+    //draggable components starts here
     <Draggable>
       <div>
         <div style={{ padding: "1rem", width: "30%" }}>
@@ -66,12 +65,11 @@ export const Tile = () => {
                   </div>
                 </div>
                 <h6 class="card-subtitle mb-2 text-muted">
-                  Users Monthly Details
+                  Users Price Details
                 </h6>
                 <Chart></Chart>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                <p class="card-text center text-center mt-2">
+                  USER PRICE DISTRIBUTION
                 </p>
               </div>
             </div>
