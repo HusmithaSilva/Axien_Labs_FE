@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import { TextField } from "./TextFields";
 import * as Yup from "yup";
@@ -6,8 +6,7 @@ import LoginJpg from "../../assets/login.jpg";
 import axios from "axios";
 import { ErrorMessage, useField } from "formik";
 
-
-
+//login function
 export const Login = () => {
   //login validation using yup
   const validate = Yup.object({
@@ -30,7 +29,6 @@ export const Login = () => {
   const [username, setUsername] = useState();
   const [passcode, setPasscode] = useState();
 
-
   const handlesubmitLogin = (e) => {
     // Prevent the default submit and page reload
     e.preventDefault();
@@ -43,7 +41,7 @@ export const Login = () => {
         console.log(response.data);
         // Handle response
       });
-      // navigate('/login');
+    // navigate('/login');
   };
 
   //formik form starts here
@@ -56,6 +54,7 @@ export const Login = () => {
         password: "",
         confirmPassword: "",
       }}
+      // formik validations
       validationSchema={validate}
       onSubmit={(values) => {
         console.log(values);
@@ -68,10 +67,6 @@ export const Login = () => {
               <div className="mt-5 pt-5 mb-5">
                 <h1 className="my-4 font-weight-bold .display-4">Sign In</h1>
                 <Form action="" onSubmit={handlesubmitLogin} method="post">
-
-
-                  {/* <TextField label="last Name" name="lastName" type="text" /> */}
-                  {/* <TextField label="Email" name="email" type="email" value={username} onChange={(e) => setUsername(e.target.value)}/> */}
                   <div className="mb-2">
                     <label>Email</label>
                     <input
@@ -104,9 +99,6 @@ export const Login = () => {
                       className="error"
                     />
                   </div>
-                  {/* <TextField label="Passcode" name="firstName" type="text" value={passcode} onChange={(e) => setPasscode(e.target.value)}/> */}
-                  {/* <TextField label="password" name="password" type="password" /> */}
-                  {/* <TextField label="Confirm Password" name="confirmPassword" type="password" /> */}
                   <button
                     className="btn btn-success shadow btn-lg mt-3 me-4"
                     type="submit"
