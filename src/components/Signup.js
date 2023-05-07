@@ -47,7 +47,7 @@ export const Signup = () => {
         console.log(response.data);
         // Handle response
       });
-      navigate('/login');
+      // navigate('/login');
   };
 
   //handle formik form to sign up users
