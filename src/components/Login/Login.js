@@ -34,7 +34,7 @@ export const Login = () => {
 
     // Handle validations
     axios
-      .post("https://axien-lab-node.onrender.com/api/user/login", { email, passcode })
+      .post("http://localhost:8081/api/user/login", { email, passcode })
       .then((response) => {
         // alert(response.data.message)
         console.log(response.data);

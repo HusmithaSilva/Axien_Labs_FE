@@ -39,7 +39,7 @@ export const Signup = () => {
 
     // Handle validations
     axios
-      .post("https://axien-lab-node.onrender.com/api/user/add", { email, name, price, stock })
+      .post("http://localhost:8081/api/user/add", { email, name, price, stock })
       .then((response) => {
         // alert(response.data.message)
         console.log(response.data);
